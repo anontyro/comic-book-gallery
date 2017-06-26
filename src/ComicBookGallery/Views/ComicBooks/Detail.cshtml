@@ -1,5 +1,6 @@
 ﻿@{
     Layout = null;
+
 }
 
 <!DOCTYPE html>
@@ -11,7 +12,15 @@
 </head>
 <body>
     <div>
-        <h1>Hello there</h1>
+        <h1>@ViewBag.SeriesTitle</h1>
+        <h3>@ViewBag.IssueNumber</h3>
     </div>
+    <div>@Html.Raw(ViewBag.Description)</div>
+    <ul>
+        @foreach (string artist in ViewBag.Artists)
+        {
+            <li>@artist</li>
+        }
+    </ul>
 </body>
 </html>
